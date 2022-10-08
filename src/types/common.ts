@@ -1,24 +1,28 @@
 export enum LayoutMediaEnum {
   Slider = 'Slider',
   Greeting = 'Greeting',
-  CenterSturcture = 'CenterSturcture',
-  History = 'History',
+  CenterStructure = 'CenterStructure',
+  OurHistory = 'OurHistory',
   WorkPlan = 'WorkPlan',
   WorkPlanMonth = 'WorkPlanMonth',
   WorkPlanYear = 'WorkPlanYear',
   WorkPlanInner = 'WorkPlanInner',
-  ContactInfo = 'ContactInfo',
-  News = 'News',
+  OurAddress = 'OurAddress',
+  CenterNews = 'CenterNews',
   NewsInner = 'NewsInner',
-  Events = 'Events',
+  CenterEvents = 'CenterEvents',
   EventInner = 'EventInner',
-  Topik = 'Topik',
+  StudyInKorea = 'StudyInKorea',
+  EducationInner = 'EducationInner',
+  TopikMaterials = 'TopikMaterials',
+  EducationMaterial = 'EducationMaterial',
   TopikInner = 'TopikInner',
+  EducationMaterialInner = 'EducationMaterialInner',
   Material = 'Material',
   MaterialInner = 'MaterialInner',
-  Schduler = 'Schduler',
-  Education = 'Education',
-  EducationInner = 'EducationInner',
+  Scheduler = 'Scheduler',
+  University = 'University',
+  UniversityInner = 'UniversityInner',
   Faq = 'Faq',
   Gallery = 'Gallery',
 }
@@ -27,6 +31,7 @@ export type Navigation = {
   title: string
   path: string
   children?: Navigation[]
+  noParent?: boolean
 }
 
 export type Social = {

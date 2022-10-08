@@ -10,13 +10,13 @@ export const HomeEventList = () => {
   ]
 
   return (
-    <div className='p-[55px] bg-white font-bold'>
-      <h6 className='text-dark text-[20px] leading-8 mb-[28px]'>
+    <div className='p-[55px] bg-azure font-bold'>
+      <h6 className='text-white text-[20px] leading-8 mb-[28px]'>
         <FormattedMessage id='center_events' />
       </h6>
       <div className='grid grid-cols-1 gap-y-[28px]'>
         {data.map((item, idx) => (
-          <HomeNewsitem key={idx} title={item.title} path={item.path} className='bg-blue text-white' />
+          <HomeNewsitem key={idx} title={item.title} path={item.path} className='bg-white text-azure' />
         ))}
       </div>
     </div>

@@ -1,16 +1,20 @@
-import { FacebookCircleIcon, FacebookIcon, InstagramIcon, LinkedinIcon, TwitterIcon, YoutubeIcon } from 'Components/Icons/Social'
+import {
+  FacebookCircleIcon,
+  FacebookIcon,
+  FacebookSquareIcon,
+  InstagramIcon,
+  InstagramSquareIcon,
+  LinkedinIcon,
+  TelegramSquareIcon,
+  TwitterIcon,
+  YoutubeIcon,
+} from 'Components/Icons/Social'
 import { Lang, Navigation, Social } from 'types/common'
 
 export const social: Social[] = [
   { type: 'facebook', path: '', icon: FacebookIcon },
   { type: 'instagram', path: '', icon: InstagramIcon },
   { type: 'youtube', path: '', icon: YoutubeIcon },
-]
-
-export const footerNav1: Navigation[] = [
-  { title: 'education_center', path: '' },
-  { title: 'news', path: 'news' },
-  { title: 'korean_language_course', path: '' },
 ]
 
 export const footerNav2: Navigation[] = [
@@ -25,42 +29,16 @@ export const footerSocial: Social[] = [
   { type: 'facebook', path: '', icon: FacebookCircleIcon },
 ]
 
-export const navigation: Navigation[] = [
-  {
-    title: 'about_the_institute',
-    path: 'about',
-    children: [
-      { title: 'greeting', path: 'greeting' },
-      { title: 'center_structure', path: 'center-structure' },
-      { title: 'our_history', path: 'our-history' },
-      { title: 'work_plan', path: 'work-plan' },
-      { title: 'our_address', path: 'contact-info' },
-    ],
-  },
-  {
-    title: 'news',
-    path: 'news',
-  },
-  {
-    title: 'education_materials',
-    path: 'education_materials',
-  },
-  {
-    title: 'sceduler',
-    path: 'sceduler',
-  },
-  {
-    title: 'institution',
-    path: 'institution',
-  },
-  {
-    title: 'faq',
-    path: 'faq',
-  },
-  {
-    title: 'gallery',
-    path: 'gallery',
-  },
+export const homeSocial: Social[] = [
+  { type: 'Facebook', path: '', icon: FacebookSquareIcon },
+  { type: 'Instagram', path: '', icon: InstagramSquareIcon },
+  { type: 'Telegram', path: '', icon: TelegramSquareIcon },
+]
+
+export const footerNav1: Navigation[] = [
+  { title: 'education_center', path: '' },
+  { title: 'news', path: 'news' },
+  { title: 'korean_language_course', path: '' },
 ]
 
 export const lang: Lang = {

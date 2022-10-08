@@ -1,2 +1,5 @@
-export { HomeNewsList } from './NewsList'
+export { StudyInKoreaList } from './StudyInKoreaList'
 export { HomeEventList } from './EventList'
+export { HomeNewsList } from './NewsList'
+export { HomeSocialList } from './SocialList'
+export { FeatureList } from './FeatureList'

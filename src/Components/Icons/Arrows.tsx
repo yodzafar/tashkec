@@ -14,3 +14,27 @@ export const ArrowForwardIcon = () => (
     />
   </svg>
 )
+
+export const ArrowLeftIcon = () => (
+  <svg width='11' height='18' viewBox='0 0 11 18' fill='none' xmlns='http://www.w3.org/2000/svg'>
+    <path
+      d='M8.77734 2.1543L1.96331 8.99927L8.77734 15.8442'
+      stroke='currentColor'
+      strokeWidth='2.90046'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+)
+
+export const ArrowRightIcon = () => (
+  <svg width='10' height='18' viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg'>
+    <path
+      d='M1.62109 2.1543L8.43513 8.99927L1.62109 15.8442'
+      stroke='currentColor'
+      strokeWidth='2.90046'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+)

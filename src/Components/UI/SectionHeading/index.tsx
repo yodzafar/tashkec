@@ -1,6 +1,4 @@
-import cn from 'classnames'
 import { FC, ReactNode } from 'react'
-import { FormattedMessage } from 'react-intl'
 
 type Props = {
   className?: string
@@ -8,5 +6,5 @@ type Props = {
 }
 
 export const SectionHeading: FC<Props> = ({ className, children }) => (
-  <h2 className={cn('text-white text-[36px] leading-[54px] font-semibold text-center', className)}>{children}</h2>
+  <h2 className={`text-white font-semibold text-center ${className || ''} text-mine-shaft`}>{children}</h2>
 )

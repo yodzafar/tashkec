@@ -1,6 +1,6 @@
-import { ReactNode, useMemo } from 'react'
+import { ReactNode } from 'react'
 import { LayoutMediaEnum } from 'types/common'
-import { Footer, Header, HomeSlider, Navbar } from '../Organisms'
+import { Footer, Header, HomeSlider, Navbar, PageHome } from '../Organisms'
 
 type Props = {
   children: ReactNode
@@ -8,21 +8,12 @@ type Props = {
 }
 
 export const MainLayout = ({ children, mediaType }: Props) => {
-  const mediaContent: ReactNode = useMemo(() => {
-    switch (mediaType) {
-      case LayoutMediaEnum.Slider:
-        return <HomeSlider />
-      default:
-        return <></>
-    }
-  }, [mediaType])
-
   return (
     <>
       <Header />
       <Navbar />
-      {mediaContent}
-      {children}
+      {mediaType === LayoutMediaEnum.Slider ? <HomeSlider /> : <PageHome mediaType={mediaType} />}
+      <div className='min-h-[870px] flex flex-col'>{children}</div>
       <Footer />
     </>
   )
