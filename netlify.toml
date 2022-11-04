@@ -1,7 +1,7 @@
 [build]
-command = "next build"
+command = "npm run build && npm run export"
+publish = "out"
 functions = "netlify/functions"
-publish = ".next"
 
 [[redirects]]
   from = "/*"
