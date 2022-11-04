@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2cab433d-7662-44d0-a92d-22b2ea8866fc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/education/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/education/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +17,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2GiVx9bQrqhvJpYeNz5Zj3rrnUY" />
   <component name="ProjectLevelVcsManager">
@@ -70,7 +72,7 @@
       <workItem from="1667251726628" duration="9368000" />
       <workItem from="1667360991027" duration="9661000" />
       <workItem from="1667384398589" duration="11688000" />
-      <workItem from="1667455659500" duration="23031000" />
+      <workItem from="1667455659500" duration="23827000" />
     </task>
     <servers />
   </component>

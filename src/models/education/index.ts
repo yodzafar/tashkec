@@ -4,7 +4,6 @@ import { ListParams, ListState, Payload } from 'types/common'
 import { AppThunk } from 'store'
 import httpClient from 'service'
 import { getListCountFromHeader } from 'utils/common'
-import { ICulture } from 'entities/culture'
 import { IInstitution } from 'entities/institution'
 
 type initialState = ListState<IInstitution>
