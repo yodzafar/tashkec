@@ -1,4 +1,4 @@
-import { IFullContent } from 'Entities/common'
+import { IFullContent } from 'entities/common'
 
 export enum KoreanCultureType {
   ADDITIONAL_LESSON = 'ADDITIONAL_LESSON', INTRODUCE_KOREAN_CULTURE = 'INTRODUCE_KOREAN_CULTURE'
