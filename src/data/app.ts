@@ -50,7 +50,7 @@ export const footerNav1: Navigation[] = [
 
 export const lang: Lang = {
   uz: [
-    { label: "O'zbek", id: 'uz' },
+    { label: 'O\'zbek', id: 'uz' },
     { label: 'Rus', id: 'ru' },
     { label: 'Koreys', id: 'kr' },
   ],
