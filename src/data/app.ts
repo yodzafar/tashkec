@@ -1,3 +1,4 @@
+import { MainHomeCultureIcon, MainHomeLanguageCourseIcon, MainHomeTestIcon } from 'Components/Icons/Home'
 import {
   FacebookCircleIcon,
   FacebookIcon,
@@ -30,9 +31,15 @@ export const footerSocial: Social[] = [
 ]
 
 export const homeSocial: Social[] = [
-  { type: 'Facebook', path: '', icon: FacebookSquareIcon },
-  { type: 'Instagram', path: '', icon: InstagramSquareIcon },
-  { type: 'Telegram', path: '', icon: TelegramSquareIcon },
+  { type: 'Facebook', path: 'https://m.facebook.com/tashkec.uz/', icon: FacebookSquareIcon },
+  { type: 'Instagram', path: 'https://instagram.com/tashkec?igshid=YmMyMTA2M2Y=', icon: InstagramSquareIcon },
+  { type: 'Telegram', path: 'https://t.me/tashkec_uz', icon: TelegramSquareIcon },
+]
+
+export const homeLinks: Social[] = [
+  { path: '/', type: 'korean_language_courses', icon: MainHomeLanguageCourseIcon },
+  { path: '/', type: 'knowledge_test_korean_language', icon: MainHomeTestIcon },
+  { path: '/korean-culture/about', type: 'culture_classroom', icon: MainHomeCultureIcon, noRoute: true },
 ]
 
 export const footerNav1: Navigation[] = [

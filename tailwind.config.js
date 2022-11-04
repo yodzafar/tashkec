@@ -4,6 +4,8 @@ module.exports = {
   theme: {
     colors: {
       denim: '#1C5CC9',
+      'bright-grey': '#3E4151',
+      grape: '#35153C',
       azure: '#2E5AAA',
       'catskill-white': '#F8FAFC',
       astronaut: '#272870',
@@ -20,10 +22,16 @@ module.exports = {
       white: '#fff',
       orange: '#FF7F51',
       mercury: '#E6E6E6',
+      error: '#B91C1C',
+      alto: '#D9D9D9',
+      'tropical-blue': '#C0D9F7',
+      'dove-grey':'#636363'
     },
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],
       manrope: ['Manrope', 'sans-serif'],
+      inter: ['Inter', 'sans-serif'],
+      'dm-sans': ['DM Sans', 'sans-serif'],
     },
     spacing: {
       1: '8px',

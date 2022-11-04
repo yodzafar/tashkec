@@ -1,11 +1,20 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextTranslate = require('next-translate')
+const { withEffectorReactAliases } = require('effector-next/tools')
+
+const enhance = withEffectorReactAliases()
+
+module.exports = nextTranslate(enhance({
   reactStrictMode: true,
   swcMinify: true,
-  i18n: {
-    locales: ['kr', 'ru', 'uz'],
-    defaultLocale: 'kr',
-  },
-}
-
-module.exports = nextConfig
+  images: {
+    // domains: ['http://176.96.241.203:9000']
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: '176.96.241.203',
+        port: '9000'
+      }
+    ]
+  }
+}))

@@ -1,19 +1,25 @@
-import cn from 'classnames'
 import { HomeSliderData } from '../types'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import moment from 'moment/moment'
 
-type Props = HomeSliderData & {
-  className?: string
-}
+type Props = HomeSliderData
 
-export const HomeSliderItem = ({ className, content, date, title }: Props) => {
+export const HomeSliderItem = ({ content, date, title, path }: Props) => {
+  const { locale } = useRouter()
   return (
-    <div className={cn('h-[212px] py-[43px] px-2 font-medium bg-white rounded-[8px]', className)}>
-      <h6 className='mb-3 text-denim'>
-        <span>{title}</span>
-      </h6>
-      <p className='mb-3 text-denim'>{content}</p>
-
-      <small className='text-[10px] leading-[12px] font-normal text-black'>{date}</small>
+    <div
+      className='rounded-[10px] border-t-[8px] border-bright-grey sm:p-[20px] p-3 bg-white text-bright-grey font-inter'>
+      <div className='leading-[28px] mb-[20px]'>{moment(date).utc().format('YYYY-MM-DD')}</div>
+      <Link href={path} locale={locale}>
+        <a
+          className='leading-[36px] pb-[20px] text-[18px] mb-[20px] font-semibold font-inter border-b-[1px] border-alto'>
+          {title}
+        </a>
+      </Link>
+      <p>
+        <span className='text-overflow'>{content.replace(/(&nbsp;|<([^>]+)>)/ig, '')}</span>
+      </p>
     </div>
   )
 }

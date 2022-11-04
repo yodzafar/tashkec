@@ -1,10 +1,11 @@
+import cn from 'classnames'
 import { ChevronDownIcon } from 'Components/Icons/Arrows'
 import { LangIcon } from 'Components/Icons/Lang'
 import { PhoneIcon } from 'Components/Icons/Phone'
 import { lang, social } from 'data/app'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { Fragment, useMemo } from 'react'
+import { useMemo } from 'react'
 import { LangData } from 'types/common'
 
 export const Header = () => {
@@ -23,7 +24,7 @@ export const Header = () => {
   }, [langData, locale])
 
   return (
-    <header className='h-[74px] bg-azure flex items-center text-white'>
+    <header className='h-[74px] bg-bright-grey flex items-center text-white'>
       <div className='container mx-auto px-4'>
         <div className='flex items-center'>
           <div className='flex items-center font-manrope'>
@@ -33,8 +34,8 @@ export const Header = () => {
               <span className='text-sm'>월~금 08:00~17:00, 주말 휴무</span>
             </div>
           </div>
-          <div className='ml-auto flex items-center'>
-            <ul className='lg:flex hidden list-none border-r-[1px] pt-[5px] pb-[5px] border-white pr-[36px]'>
+          <div className='ml-auto sm:flex hidden items-center'>
+            <ul className='md:flex hidden list-none border-r-[1px] pt-[5px] pb-[5px] border-white lg:pr-[36px] md:pr-4'>
               {social.map((item, idx) => {
                 const Icon = item.icon
                 return (
@@ -50,24 +51,28 @@ export const Header = () => {
                 )
               })}
             </ul>
-            <div className='pt-[5px] pb-[5px] border-white lg:pl-[36px] pr-2 lg:pl-[0]'>
+            <div className='pt-[5px] pb-[5px] border-white hidden sm:block lg:pl-[36px] md:pl-4 md:pr-4 pr-2 pl-[0] lg:pr-[36px]'>
               팝업 <span className='text-orange'>1</span> 건
             </div>
-            <div className='pt-[5px] pb-[5px] border-l-[1px] border-white lg:pl-[36px] pl-2 flex relative dropdown-show'>
+            <div className='pt-[5px] pb-[5px] border-l-[1px] border-white md:pl-4 lg:pl-[36px] pl-2 flex relative dropdown-show'>
               <LangIcon />
               <div className='mr-[8px] ml-[8px]'>{activeLang?.label || ''}</div>
-              <ChevronDownIcon />
+              <div className='mt-[2px]'>
+                <ChevronDownIcon />
+              </div>
               <ul className='list-none dropdown right-[0] bg-white shadow py-1 px-2 min-w-[110px]'>
                 {langData.map(item => (
-                  <Fragment key={item.id}>
-                    {locale !== item.id && (
-                      <li className='py-[2px]'>
-                        <Link href={pathname} locale={item.id}>
-                          <a className='font-medium hover:text-azure whitespace-nowrap text-mine-shaft'>{item.label}</a>
-                        </Link>
-                      </li>
-                    )}
-                  </Fragment>
+                  <li className='border-b-[1px] border-[#e9e9e9] last:border-b-0' key={item.id}>
+                    <Link href={pathname} locale={item.id}>
+                      <a
+                        className={cn('inline-block hover:text-azure whitespace-nowrap font-medium text-sm py-[12px]', {
+                          'text-bright-grey': activeLang?.id === item.id,
+                          'text-manatee': activeLang?.id !== item.id,
+                        })}>
+                        {item.label}
+                      </a>
+                    </Link>
+                  </li>
                 ))}
               </ul>
             </div>

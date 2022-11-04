@@ -1,10 +1,15 @@
 import { FC, ReactNode } from 'react'
+import cn from 'classnames'
 
 type Props = {
-  className?: string
   children: ReactNode
+  className?: string
 }
 
-export const SectionHeading: FC<Props> = ({ className, children }) => (
-  <h2 className={`text-white font-semibold text-center ${className || ''} text-mine-shaft`}>{children}</h2>
+export const SectionHeading: FC<Props> = ({ children, className }) => (
+  <div className={cn('flex justify-center text-center', className)}>
+    <div className='text-2xl bg-bright-grey min-w-[210px] leading-[30px] py-[7px] text-center font-inter text-white mb-[52px]'>
+      {children}
+    </div>
+  </div>
 )

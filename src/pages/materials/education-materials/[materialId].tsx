@@ -1,9 +1,22 @@
-import { MainLayout } from 'Components/Layout'
+import { ContentLayout, MainLayout } from 'Components/Layout'
 import { NextPage } from 'next'
-import { LayoutMediaEnum } from 'types/common'
+import { LayoutBackground } from 'data/background'
+import { materialNavigation } from 'data/navigation'
+import { SEO } from 'Components/SEO'
 
 const EducationMaterialDetail: NextPage = () => {
-  return <MainLayout mediaType={LayoutMediaEnum.EducationMaterialInner}>EducationMaterialDetail</MainLayout>
+  return (
+    <>
+      <SEO title='EducationMaterialDetail' />
+      <MainLayout background={LayoutBackground.Material} pageTitle='topik_materials'>
+        <h2 className='page-section-title py-3 sm:block hidden'>
+        </h2>
+        <ContentLayout parent='materials' parentTitle='education_materials' navigation={materialNavigation}>
+          EducationMaterialDetail
+        </ContentLayout>
+      </MainLayout>
+    </>
+  )
 }
 
 export default EducationMaterialDetail

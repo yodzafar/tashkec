@@ -1,9 +1,21 @@
-import { MainLayout } from 'Components/Layout'
+import { ContentLayout, MainLayout } from 'Components/Layout'
 import { NextPage } from 'next'
-import { LayoutMediaEnum } from 'types/common'
+import { LayoutBackground } from 'data/background'
+import { SEO } from 'Components/SEO'
 
 const UniversityDetail: NextPage = () => {
-  return <MainLayout mediaType={LayoutMediaEnum.UniversityInner}>UniversityDetail</MainLayout>
+  return (
+    <>
+      <SEO title='institution detail' />
+      <MainLayout background={LayoutBackground.University} pageTitle='institution'>
+        <h2 className='page-section-title py-3 sm:block hidden'>
+        </h2>
+        <ContentLayout parent='institution' parentTitle='institution' navigation={[]}>
+          institution
+        </ContentLayout>
+      </MainLayout>
+    </>
+  )
 }
 
 export default UniversityDetail

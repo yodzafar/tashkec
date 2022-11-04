@@ -1,28 +1,19 @@
-import type { AppProps } from 'next/app'
-import '../styles/globals.css'
-import { IntlProvider } from 'react-intl'
-import { useRouter } from 'next/router'
-import ru from 'lang/ru.json'
-import uz from 'lang/uz.json'
-import kr from 'lang/kr.json'
-
 import Router from 'next/router'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
+import '../styles/globals.scss'
+import { wrapper } from 'store'
+import { AppProps } from 'next/app'
+import { FC } from 'react'
 
 Router.events.on('routeChangeStart', () => NProgress.start())
 Router.events.on('routeChangeComplete', () => NProgress.done())
 Router.events.on('routeChangeError', () => NProgress.done())
 
-const messages: { [key: string]: {} } = { uz, ru, kr }
-
-function MyApp({ Component, pageProps }: AppProps) {
-  const { locale } = useRouter()
+const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   return (
-    <IntlProvider locale={locale || 'kr'} messages={locale ? messages[locale] : messages['kr']}>
-      <Component {...pageProps} />
-    </IntlProvider>
+    <Component {...pageProps} />
   )
 }
 
-export default MyApp
+export default wrapper.withRedux(MyApp)

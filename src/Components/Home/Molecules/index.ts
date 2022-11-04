@@ -1,4 +1,6 @@
-export { HomeNewsitem } from './NewsItem'
+export { HomeNewsItem } from './NewsItem'
 export { HomeSliderItem } from './SliderItem'
 export { HomeSocialItem } from './SocialItem'
-export { FeatureItem } from './FeatureItem'
+export { HomeNewsTab } from './HomeNewsTab'
+export { HomeStudyHeading } from './HomeStudyHeading'
+export { HomeGalleryItem } from './GalleryItem'

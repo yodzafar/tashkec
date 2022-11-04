@@ -1,22 +1,37 @@
 import { ContentLayout, MainLayout } from 'Components/Layout'
 import { NextPage } from 'next'
-import { LayoutMediaEnum } from 'types/common'
 import { aboutNavigation } from 'data/navigation'
-import { FormattedMessage } from 'react-intl'
+import { LayoutBackground } from 'data/background'
+import useTranslation from 'next-translate/useTranslation'
+import { SEO } from 'Components/SEO'
+import { Greeting } from 'Components/About'
+import { wrapper } from 'store'
+import { fetchGreeting } from 'models'
 
-const Greeting: NextPage = () => {
+const GreetingPage: NextPage = () => {
+  const { t } = useTranslation()
   return (
-    <MainLayout mediaType={LayoutMediaEnum.Greeting}>
-      <div className='container mx-auto px-2'>
-        <h2 className='page-section-title py-3'>
-          <FormattedMessage id='greeting' />
-        </h2>
-      </div>
-      <ContentLayout parent='about' parentTitle='about_the_institute' navigation={aboutNavigation}>
-        workplan
-      </ContentLayout>
-    </MainLayout>
+    <>
+      <SEO title={'greeting'} />
+      <MainLayout pageTitle='greeting' background={LayoutBackground.Greeting}>
+        <div className='container mx-auto px-2'>
+          <h2 className='page-section-title py-3 sm:block hidden'>
+            {t('greeting')}
+          </h2>
+        </div>
+        <ContentLayout parent='about' parentTitle='about_the_institute' navigation={aboutNavigation}>
+          <Greeting />
+        </ContentLayout>
+      </MainLayout>
+    </>
   )
 }
 
-export default Greeting
+export const getServerSideProps = wrapper.getServerSideProps(store => async () => {
+  await store.dispatch(fetchGreeting())
+  return {
+    props: {},
+  }
+})
+
+export default GreetingPage

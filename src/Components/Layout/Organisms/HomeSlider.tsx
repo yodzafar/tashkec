@@ -1,31 +1,68 @@
-import { Button } from 'Components/UI/Button'
-import Image from 'next/image'
-import { FormattedMessage } from 'react-intl'
-import { useMediaQuery } from 'hooks'
+import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
+import { ArrowLongLeftIcon, ArrowLongRightIcon } from 'Components/Icons/Arrows'
+import { HomeSliderTitleSvg } from 'Components/Icons/Home'
+import { PauseCircleFilledIcon, PlayCircleFilledIcon } from 'Components/Icons/Media'
+import { homeLinks } from 'data/app'
+import { useRef, useState } from 'react'
+import { HomeLinkItem } from '../Molecules'
+
+const arr = [1, 2, 3]
 
 export const HomeSlider = () => {
-  const matched = useMediaQuery('(max-width: 1024px)')
+  const ref = useRef<Splide>(null)
+  const [index, setIndex] = useState<number>(0)
 
   return (
-    <div className='relative'>
-      <Image width={100} height={matched ? 100 : 42} layout='responsive' objectFit='cover' src='/images/home_bg.jpg' />
-      <div className='absolute left-[0] right-[0] top-[0] flex flex-col justify-center bottom-[0]'>
-        <div className='container mx-auto px-4'>
-          <p className='font-semibold text-[22px] text-grey-semi mb-[20px] leading-8'>
-            <FormattedMessage id='home_greeting' />
-          </p>
-          <div className='w-[68px] h-[5px] bg-azure mb-4' />
-          <h1 className='text-[36px] leading-[54px] font-semibold text-azure mb-4'>
-            <FormattedMessage id='home_title' />
-          </h1>
-          <p className='text-grey-semi font-medium text-[22px] leading-8 max-w-[650px] 2xl:max-w-[800px] mb-[40px]'>
-            <FormattedMessage id='home_description' />
-          </p>
-          <Button>
-            <FormattedMessage id='read_more' />
-          </Button>
+    <div className='relative main-slider-wrapper text-white'>
+      <div className='absolute left-[0] right-[0] top-[0] bottom-[0] z-20'>
+        <div className='container mx-auto h-[100%] flex flex-col items-center justify-center pb-6'>
+          <HomeSliderTitleSvg />
+          <div className='mt-[60px] flex sm:flex-nowrap flex-wrap items-center justify-center'>
+            {homeLinks.map((item, index) => (
+              <div key={index} className='sm:mx-4 mx-2'>
+                <HomeLinkItem {...item} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
+      <Splide
+        ref={ref}
+        hasTrack={false}
+        onMove={e => {
+          setIndex(e.index)
+        }}
+        options={{
+          type: 'loop',
+          autoplay: true,
+          arrows: false,
+          pagination: false,
+        }}>
+        <div className='main-slider-control h-[44px] rounded-[22px] absolute'>
+          <button onClick={() => ref.current?.go(index - 1)}>
+            <ArrowLongLeftIcon />
+          </button>
+          <div className='home-slider-position'>{`${index + 1}/${arr.length}`}</div>
+          <button className='splide__toggle' type='button'>
+            <span className='splide__toggle__play'>
+              <PlayCircleFilledIcon />
+            </span>
+            <span className='splide__toggle__pause'>
+              <PauseCircleFilledIcon />
+            </span>
+          </button>
+          <button onClick={() => ref.current?.go(index + 1)}>
+            <ArrowLongRightIcon />
+          </button>
+        </div>
+        <SplideTrack>
+          {arr.map((item, idx) => (
+            <SplideSlide key={item}>
+              <div className={`main-slider-item slider-${idx + 1}`} />
+            </SplideSlide>
+          ))}
+        </SplideTrack>
+      </Splide>
     </div>
   )
 }
