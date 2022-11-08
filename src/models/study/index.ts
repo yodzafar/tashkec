@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { HYDRATE } from 'next-redux-wrapper'
-import { ListParams, ListState, Payload } from 'types/common'
+import { ListParams, ListStateWithDetail, Payload } from 'types/common'
 import { AppThunk } from 'store'
 import httpClient from 'service'
 import { getListCountFromHeader } from 'utils/common'
 import { IStudyInKorea } from 'entities/news'
 
-type initialState = ListState<IStudyInKorea>
+type initialState = ListStateWithDetail<IStudyInKorea>
 
 const slice = createSlice({
   name: 'study',
@@ -14,6 +14,7 @@ const slice = createSlice({
     isLoading: false,
     list: [],
     count: 0,
+    detail: null,
   } as initialState,
   reducers: {
     loading: (state, { payload }) => {
@@ -23,6 +24,9 @@ const slice = createSlice({
       state.list = payload.data
       state.count = getListCountFromHeader(payload.headers)
     },
+    fetchDetail: (state, { payload }: Payload<IStudyInKorea>) => {
+      state.detail = payload.data
+    },
   },
   extraReducers: {
     [HYDRATE]: (state, action) => ({ ...state, ...action.payload.study }),
@@ -30,7 +34,7 @@ const slice = createSlice({
 })
 
 export const studyReducer = slice.reducer
-const { loading, fetch } = slice.actions
+const { loading, fetch, fetchDetail } = slice.actions
 
 export const fetchStudy = (params?: ListParams): AppThunk => async (dispatch) => {
   try {
@@ -39,7 +43,7 @@ export const fetchStudy = (params?: ListParams): AppThunk => async (dispatch) =>
       params: {
         size: params?.size || 10,
         page: params?.page || 0,
-        ...(params?.studyTypeEnum ? { [params.studyTypeEnum]: params.studyTypeEnum } : {}),
+        ...(params?.studyTypeEnum ? { studyTypeEnum: params.studyTypeEnum } : {}),
       },
     })
     dispatch(fetch(res))
@@ -47,6 +51,15 @@ export const fetchStudy = (params?: ListParams): AppThunk => async (dispatch) =>
     console.log(e)
   } finally {
     dispatch(loading(false))
+  }
+}
+
+export const fetchStudyDetail = (id: string): AppThunk => async (dispatch) => {
+  try {
+    const res = await httpClient.get<IStudyInKorea>(`/study-in-koreas/${id}`)
+    dispatch(fetchDetail(res))
+  } catch (e) {
+    console.log(e)
   }
 }
 

@@ -1,15 +1,16 @@
 import { getContent, getTitle } from 'utils/common'
 import { useRouter } from 'next/router'
-import { IEvents } from 'entities/news'
 import moment from 'moment'
 import { ArrowForwardIcon } from 'Components/Icons/Arrows'
 import Link from 'next/link'
+import { IFullContent } from 'entities/common'
 
-type Props = IEvents & {
+type Props = IFullContent & {
   path: string
+  publishedDate?: string
 }
 
-export const NewsItem = (
+export const ListItem = (
   {
     titleKr,
     titleRu,
@@ -36,9 +37,13 @@ export const NewsItem = (
           </p>
           <ArrowForwardIcon />
         </div>
-        <p className='text-[18px] leading-[21px]'>
-          {moment(publishedDate).utc().format('YYYY-MM-DD')}
-        </p>
+        {
+          publishedDate && (
+            <p className='text-[18px] leading-[21px]'>
+              {moment(publishedDate).utc().format('YYYY-MM-DD')}
+            </p>
+          )
+        }
       </a>
     </Link>
   )

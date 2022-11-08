@@ -22,7 +22,7 @@ export const History = () => {
         bottomLine.map(item => (
           <div
             key={item}
-            className='h-[1px] absolute bg-light-grey left-[0] w-[100%] md: block hidden'
+            className='h-[1px] absolute bg-light-grey left-[0] w-[100%] md:block hidden'
             style={{ top: `${(item * 213) + ((item - 1) * 12)}px` }}
           />
         ))

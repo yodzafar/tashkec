@@ -39,7 +39,7 @@ export const Navbar = () => {
             <ul
               className={cn('lg:hidden mobile-menu block fixed bg-bright-grey top-[146px] pt-3 pb-[64px] left-[0] right-[0] z-30', { open })}>
               {navigation.map((item, idx) => (
-                <MobileMenuItem key={idx} {...item} path={`/${item.path}`} />
+                <MobileMenuItem key={idx} {...item} path={`/${item.path}`} onClick={() =>handleClick(!open)} />
               ))}
             </ul>
             <div className='lg:hidden text-azure' onClick={() => handleClick(!open)}>

@@ -9,9 +9,9 @@ type Props = {
 
 export const PageHome = ({ background, children }: Props) => {
   return (
-    <div className='page-home'>
+    <div className='page-home px-4'>
       <Image src={background} layout='fill' loading='lazy' alt='page-home-title' />
-      <h1 className='sm:text-[32px] sm:leading-[48px] text-[20px] leading-[30px] font-semibold'>{children}</h1>
+      <h1 className='sm:text-[32px] sm:leading-[48px] text-[20px] leading-[30px] font-semibold text-center'>{children}</h1>
     </div>
   )
 }

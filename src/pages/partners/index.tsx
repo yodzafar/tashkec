@@ -3,9 +3,12 @@ import { NextPage } from 'next'
 import { LayoutBackground } from 'data/background'
 import useTranslation from 'next-translate/useTranslation'
 import { SEO } from 'Components/SEO'
+import { wrapper } from 'store'
+import { fetchPartners } from 'models'
+import { Partners } from 'Components/About'
 
-const Partners: NextPage = () => {
-  const {t} = useTranslation()
+const PartnersPage: NextPage = () => {
+  const { t } = useTranslation()
   return (
     <>
       <SEO title='partners' />
@@ -14,11 +17,18 @@ const Partners: NextPage = () => {
           {t('partners')}
         </h2>
         <ContentLayout parent='partners' parentTitle='partners' navigation={[]}>
-          partners
+          <Partners />
         </ContentLayout>
       </MainLayout>
     </>
   )
 }
 
-export default Partners
+export const getServerSideProps = wrapper.getServerSideProps(store => async () => {
+  await store.dispatch(fetchPartners())
+  return {
+    props: {},
+  }
+})
+
+export default PartnersPage

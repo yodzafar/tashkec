@@ -4,8 +4,11 @@ import { koreanCourse } from 'data/navigation'
 import { LayoutBackground } from 'data/background'
 import useTranslation from 'next-translate/useTranslation'
 import { SEO } from 'Components/SEO'
+import { wrapper } from 'store'
+import { fetchTimeTable } from 'models'
+import { TimeTable } from 'Components/Courses'
 
-const Timetable: NextPage = () => {
+const TimeTablePage: NextPage = () => {
   const { t } = useTranslation()
   return (
     <>
@@ -15,11 +18,18 @@ const Timetable: NextPage = () => {
           {t('timetable_of_classes_korean_language')}
         </h2>
         <ContentLayout parent='courses' parentTitle='courses' navigation={koreanCourse}>
-          Time table
+          <TimeTable />
         </ContentLayout>
       </MainLayout>
     </>
   )
 }
 
-export default Timetable
+export const getServerSideProps = wrapper.getServerSideProps(store => async () => {
+  await store.dispatch(fetchTimeTable())
+  return {
+    props: {},
+  }
+})
+
+export default TimeTablePage

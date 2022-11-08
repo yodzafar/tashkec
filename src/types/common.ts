@@ -37,6 +37,10 @@ export type ListState<D> = {
   count: number
 }
 
+export type ListStateWithDetail<D> = ListState<D> & {
+  detail: D | null
+}
+
 export type Payload<D> = PayloadAction<AxiosResponse<D>>
 
 export type ListParams = {
@@ -47,4 +51,5 @@ export type ListParams = {
   koreanCultureType?: string | KoreanCultureType
   searchValue?: string
   timeType?: string | WorkPlanTypeEnum
+  url?: string,
 }

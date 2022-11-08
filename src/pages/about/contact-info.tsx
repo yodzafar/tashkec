@@ -6,7 +6,11 @@ import useTranslation from 'next-translate/useTranslation'
 import { SEO } from 'Components/SEO'
 import { wrapper } from 'store'
 import { fetchContacts } from 'models'
-import { Address } from 'Components/About'
+import dynamic from 'next/dynamic'
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+const Address = dynamic(() => import('../../Components/About/Templates/Address'))
 
 const ContactInfoPage: NextPage = () => {
   const { t } = useTranslation()

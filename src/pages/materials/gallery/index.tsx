@@ -4,9 +4,12 @@ import { LayoutBackground } from 'data/background'
 import { materialNavigation } from 'data/navigation'
 import useTranslation from 'next-translate/useTranslation'
 import { SEO } from 'Components/SEO'
+import { wrapper } from 'store'
+import { fetchGallery } from 'models'
+import { Gallery } from 'Components/Materials'
 
-const Gallery: NextPage = () => {
-  const {t} = useTranslation()
+const GalleryPage: NextPage = () => {
+  const { t } = useTranslation()
 
   return (
     <>
@@ -16,11 +19,18 @@ const Gallery: NextPage = () => {
           {t('gallery')}
         </h2>
         <ContentLayout parent='materials' parentTitle='materials' navigation={materialNavigation}>
-          Gallery
+          <Gallery />
         </ContentLayout>
       </MainLayout>
     </>
   )
 }
 
-export default Gallery
+export const getServerSideProps = wrapper.getServerSideProps(store => async () => {
+  await store.dispatch(fetchGallery())
+  return {
+    props: {},
+  }
+})
+
+export default GalleryPage

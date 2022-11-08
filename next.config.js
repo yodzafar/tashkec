@@ -1,14 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextTranslate = require('next-translate')
-const { withEffectorReactAliases } = require('effector-next/tools')
+const withPlugins = require('next-compose-plugins')
+const {withPlausibleProxy} = require('next-plausible')
+const withBundleAnalyzer = require('@next/bundle-analyzer')
 
-const enhance = withEffectorReactAliases()
+const plausiblePlugin = withPlausibleProxy
+const bundleAnalyzer = withBundleAnalyzer({enabled: process.env.ANALYZE === true})
 
-module.exports = nextTranslate(enhance({
+const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    // domains: ['http://176.96.241.203:9000']
     remotePatterns: [
       {
         protocol: 'http',
@@ -17,4 +19,6 @@ module.exports = nextTranslate(enhance({
       }
     ]
   }
-}))
+}
+
+module.exports = withPlugins([[plausiblePlugin, bundleAnalyzer], nextTranslate], nextConfig)

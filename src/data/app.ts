@@ -45,7 +45,7 @@ export const homeLinks: Social[] = [
 export const footerNav1: Navigation[] = [
   { title: 'education_center', path: '' },
   { title: 'news', path: 'news' },
-  { title: 'korean_language_course', path: '' },
+  { title: 'korean_language_courses', path: '' },
 ]
 
 export const lang: Lang = {

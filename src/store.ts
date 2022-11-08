@@ -2,6 +2,7 @@ import { configureStore, ThunkAction } from '@reduxjs/toolkit'
 import { Action } from 'redux'
 import { createWrapper } from 'next-redux-wrapper'
 import {
+  attachmentReducer,
   contactsReducer,
   cultureReducer,
   educationReducer,
@@ -41,6 +42,7 @@ const makeStore = () =>
       topikLevels: topikLevelsReducer,
       faq: faqReducer,
       partners: partnersReducer,
+      attachment: attachmentReducer
     },
     devTools: true,
   })

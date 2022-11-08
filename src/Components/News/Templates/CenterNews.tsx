@@ -1,12 +1,12 @@
 import { useAppSelector } from 'hooks'
-import { NewsItem } from 'Components/News/Molecules'
+import { ListItem } from 'Components/UI/ListItem'
 
 export const CenterNews = () => {
   const { list } = useAppSelector(state => state.news)
 
   return (
     <div>
-      {list.map((item) => <NewsItem path={`/news/center-news/${item.id}`} key={item.id} {...item} />)}
+      {list.map((item) => <ListItem path={`/news/center-news/${item.id}`} key={item.id} {...item} />)}
     </div>
   )
 }

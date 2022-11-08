@@ -9,11 +9,13 @@ import { IWorkPlan, WorkPlanTypeEnum } from 'entities/about'
 type initialState = {
   month: ListState<IWorkPlan>,
   year: ListState<IWorkPlan>
+  detail: IWorkPlan | null
 }
 
 const slice = createSlice({
   name: 'workPlan',
   initialState: {
+    detail: null,
     year: {
       isLoading: false,
       list: [],
@@ -40,6 +42,9 @@ const slice = createSlice({
       state.year.list = payload.data
       state.year.count = getListCountFromHeader(payload.headers)
     },
+    fetchDetail: (state, {payload}: Payload<IWorkPlan>) => {
+      state.detail = payload.data
+    }
   },
   extraReducers: {
     [HYDRATE]: (state, action) => ({ ...state, ...action.payload.workPlan }),
@@ -47,7 +52,7 @@ const slice = createSlice({
 })
 
 export const workPlanReducer = slice.reducer
-const { monthLoading, monthFetch, yearLoading, yearFetch } = slice.actions
+const { monthLoading, monthFetch, yearLoading, yearFetch, fetchDetail } = slice.actions
 
 export const fetchMonthWorkPlans = (params?: ListParams): AppThunk => async (dispatch) => {
   try {
@@ -82,6 +87,15 @@ export const fetchYearWorkPlans = (params?: ListParams): AppThunk => async (disp
     console.log(e)
   } finally {
     dispatch(yearLoading(false))
+  }
+}
+
+export const fetchWorkPlanDetail = (id: string):AppThunk => async (dispatch) => {
+  try {
+    const res = await httpClient.get<IWorkPlan>(`/work-plans/${id}`)
+    dispatch(fetchDetail(res))
+  }catch (e) {
+    console.log(e)
   }
 }
 

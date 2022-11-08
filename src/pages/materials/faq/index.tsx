@@ -5,9 +5,12 @@ import { LayoutBackground } from 'data/background'
 import { materialNavigation } from 'data/navigation'
 import useTranslation from 'next-translate/useTranslation'
 import { SEO } from 'Components/SEO'
+import { wrapper } from 'store'
+import { fetchFaq } from 'models'
+import { Faq } from 'Components/Materials'
 
-const Faq: NextPage = () => {
-  const {t} = useTranslation()
+const FaqPage: NextPage = () => {
+  const { t } = useTranslation()
 
   return (
     <>
@@ -17,11 +20,18 @@ const Faq: NextPage = () => {
           {t('faq')}
         </h2>
         <ContentLayout parent='materials' parentTitle='education_materials' navigation={materialNavigation}>
-          FAQ
+          <Faq />
         </ContentLayout>
       </MainLayout>
     </>
   )
 }
 
-export default Faq
+export const getServerSideProps = wrapper.getServerSideProps(store => async () => {
+  await store.dispatch(fetchFaq())
+  return {
+    props: {},
+  }
+})
+
+export default FaqPage

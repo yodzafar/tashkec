@@ -4,6 +4,10 @@ import { studyInKorea } from 'data/navigation'
 import { LayoutBackground } from 'data/background'
 import useTranslation from 'next-translate/useTranslation'
 import { SEO } from 'Components/SEO'
+import { wrapper } from 'store'
+import { fetchStudy } from 'models'
+import { StudyTypeEnum } from 'entities/news'
+import { Study } from 'Components/Study'
 
 const News: NextPage = () => {
   const {t} = useTranslation()
@@ -15,11 +19,18 @@ const News: NextPage = () => {
           {t('news_about_studying_in_korea')}
         </h2>
         <ContentLayout parent='study-in-korea' parentTitle='study_in_korea' navigation={studyInKorea}>
-          news_about_studying_in_korea
+          <Study subPath='news' />
         </ContentLayout>
       </MainLayout>
     </>
   )
 }
+
+export const getServerSideProps = wrapper.getServerSideProps(store => async () => {
+  await store.dispatch(fetchStudy({ studyTypeEnum: StudyTypeEnum.NEWS_OF_STUDY }))
+  return {
+    props: {},
+  }
+})
 
 export default News

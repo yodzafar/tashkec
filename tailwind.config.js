@@ -25,7 +25,8 @@ module.exports = {
       error: '#B91C1C',
       alto: '#D9D9D9',
       'tropical-blue': '#C0D9F7',
-      'dove-grey':'#636363'
+      'dove-grey':'#636363',
+      'blue':'rgba(46, 90, 170, 0.1)'
     },
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],
