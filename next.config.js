@@ -8,6 +8,7 @@ const plausiblePlugin = withPlausibleProxy
 const bundleAnalyzer = withBundleAnalyzer({enabled: process.env.ANALYZE === true})
 
 const nextConfig = {
+  target: 'serverless',
   reactStrictMode: true,
   swcMinify: true,
   images: {

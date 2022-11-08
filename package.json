@@ -10,6 +10,7 @@
     "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "^4.28.6",
     "@next/bundle-analyzer": "^13.0.2",
     "@reduxjs/toolkit": "^1.8.6",
     "@splidejs/react-splide": "^0.7.12",
