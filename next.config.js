@@ -1,14 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextTranslate = require('next-translate')
-const withPlugins = require('next-compose-plugins')
-const {withPlausibleProxy} = require('next-plausible')
-const withBundleAnalyzer = require('@next/bundle-analyzer')
-
-const plausiblePlugin = withPlausibleProxy
-const bundleAnalyzer = withBundleAnalyzer({enabled: process.env.ANALYZE === true})
 
 const nextConfig = {
-  target: 'serverless',
   reactStrictMode: true,
   swcMinify: true,
   images: {
@@ -22,4 +15,6 @@ const nextConfig = {
   }
 }
 
-module.exports = withPlugins([[plausiblePlugin, bundleAnalyzer], nextTranslate], nextConfig)
+module.exports = nextTranslate({
+  ...nextConfig
+})

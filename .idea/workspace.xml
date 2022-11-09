@@ -5,56 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2cab433d-7662-44d0-a92d-22b2ea8866fc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/ru/common.json" beforeDir="false" afterPath="$PROJECT_DIR$/locales/ru/common.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/uz/common.json" beforeDir="false" afterPath="$PROJECT_DIR$/locales/uz/common.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netlify.toml" beforeDir="false" afterPath="$PROJECT_DIR$/netlify.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/About/Templates/History.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/About/Templates/History.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/About/Templates/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/About/Templates/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Layout/Molecules/MobileMenuItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Layout/Molecules/MobileMenuItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Layout/Organisms/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Layout/Organisms/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Layout/Organisms/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Layout/Organisms/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Layout/Organisms/PageHome.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Layout/Organisms/PageHome.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/News/Molecules/NewsItem.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/News/Molecules/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/News/Templates/CenterEvents.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/News/Templates/CenterEvents.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/News/Templates/CenterNews.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/News/Templates/CenterNews.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SEO/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SEO/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/UI/Button/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/UI/Button/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/culture/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/culture/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/education/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/education/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/materials/faq.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/materials/faq.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/materials/gallery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/materials/gallery.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/news/centerEvents.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/news/centerEvents.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/news/centerNews.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/news/centerNews.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/news/workPlan.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/news/workPlan.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/study/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/study/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/about/contact-info.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/about/contact-info.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/courses/timetable/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/courses/timetable/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/korean-culture/about/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/korean-culture/about/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/korean-culture/creative-mugs/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/korean-culture/creative-mugs/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/materials/faq/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/materials/faq/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/materials/gallery/[galleryId].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/materials/gallery/[galleryId].tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/materials/gallery/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/materials/gallery/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/news/center-events/[eventId].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/center-events/[eventId].tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/news/center-news/[newsId].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/center-news/[newsId].tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/news/schedule-events/[plandId].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/schedule-events/[planId].tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/partners/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/partners/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/study-in-korea/association-gks-graduates/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/study-in-korea/association-gks-graduates/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/study-in-korea/gks-program/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/study-in-korea/gks-program/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/study-in-korea/news/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/study-in-korea/news/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/study-in-korea/programs-for-compatriots/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/study-in-korea/programs-for-compatriots/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/universities/[universityId].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/universities/[universityId].tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/universities/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/universities/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/common.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/common.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,23 +35,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/macbookpro/Desktop/ys-hub/tashkec/tashkec-client/src/pages/study-in-korea/programs-for-compatriots",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/Users/macbookpro/Desktop/ys-hub/tashkec/tashkec-client/node_modules/prettier",
-    "settings.editor.selected.configurable": "actions.on.save",
-    "ts.external.directory.path": "/Users/macbookpro/Desktop/ys-hub/tashkec/tashkec-client/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/macbookpro/Desktop/ys-hub/tashkec/tashkec-client/src/pages/study-in-korea/programs-for-compatriots&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/macbookpro/Desktop/ys-hub/tashkec/tashkec-client/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/macbookpro/Desktop/ys-hub/tashkec/tashkec-client/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/pages/study-in-korea/programs-for-compatriots" />
@@ -128,7 +85,8 @@
       <workItem from="1667455659500" duration="26283000" />
       <workItem from="1667544730204" duration="601000" />
       <workItem from="1667573938579" duration="16593000" />
-      <workItem from="1667814836480" duration="20271000" />
+      <workItem from="1667814836480" duration="22667000" />
+      <workItem from="1667964869033" duration="945000" />
     </task>
     <servers />
   </component>
